@@ -1,5 +1,5 @@
 services:
-  helloworld:
+  mfwebsite:
     build:
       dockerfile: ./build/mfwebsite.Dockerfile
     environment:

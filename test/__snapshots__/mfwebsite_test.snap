@@ -1,11 +1,35 @@
 
 [Test_index - 1]
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="GENERATOR" content="github.com/gomarkdown/markdown markdown processor for Go">
+  <meta charset="utf-8">
+</head>
+<body>
+
 <p>This is the home page</p>
+
+</body>
+</html>
 
 ---
 
 [Test_other - 1]
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="GENERATOR" content="github.com/gomarkdown/markdown markdown processor for Go">
+  <meta charset="utf-8">
+</head>
+<body>
+
 <p>This is another page</p>
+
+</body>
+</html>
 
 ---
 
@@ -21,12 +45,24 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    line-height: 1.2
+    line-height: 1.2;
 }
 
 ---
 
 [Test_subdir - 1]
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta name="GENERATOR" content="github.com/gomarkdown/markdown markdown processor for Go">
+  <meta charset="utf-8">
+</head>
+<body>
+
 <p>This is in a subdirectory</p>
+
+</body>
+</html>
 
 ---

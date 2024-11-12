@@ -114,9 +114,10 @@ func mdToHTML(md []byte) (renderedHTML string) {
 	doc := p.Parse(md)
 
 	// Create HTML renderer with extensions.
-	htmlFlags := html.CommonFlags | html.HrefTargetBlank
+	htmlFlags := html.CommonFlags | html.HrefTargetBlank | html.CompletePage
 	opts := html.RendererOptions{Flags: htmlFlags}
 	renderer := html.NewRenderer(opts)
+	renderedHTML = string(markdown.Render(doc, renderer))
 
-	return string(markdown.Render(doc, renderer))
+	return renderedHTML
 }
