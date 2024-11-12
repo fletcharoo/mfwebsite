@@ -1,4 +1,14 @@
 
+[Test_index - 1]
+This is the home page
+
+---
+
+[Test_other - 1]
+This is another page
+
+---
+
 [Test_styleCSS - 1]
 body {
     margin: 40px auto;
@@ -13,5 +23,10 @@ body {
 h1,h2,h3,h4,h5,h6 {
     line-height: 1.2
 }
+
+---
+
+[Test_subdir - 1]
+This is in a subdirectory
 
 ---
