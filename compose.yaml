@@ -1,0 +1,6 @@
+services:
+  helloworld:
+    build:
+      dockerfile: ./build/mfwebsite.Dockerfile
+    ports:
+      - "8080:8080"
