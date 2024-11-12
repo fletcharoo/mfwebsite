@@ -1,11 +1,11 @@
 
 [Test_index - 1]
-This is the home page
+<p>This is the home page</p>
 
 ---
 
 [Test_other - 1]
-This is another page
+<p>This is another page</p>
 
 ---
 
@@ -27,6 +27,6 @@ h1,h2,h3,h4,h5,h6 {
 ---
 
 [Test_subdir - 1]
-This is in a subdirectory
+<p>This is in a subdirectory</p>
 
 ---
