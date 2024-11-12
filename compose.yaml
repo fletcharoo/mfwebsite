@@ -2,5 +2,7 @@ services:
   helloworld:
     build:
       dockerfile: ./build/mfwebsite.Dockerfile
+    environment:
+      PORT: "8080"
     ports:
       - "8080:8080"

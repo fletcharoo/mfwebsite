@@ -1,17 +1,33 @@
 package main
 
 import (
+	_ "embed"
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/fletcharoo/snest"
 )
 
-func main() {
-	http.HandleFunc("/", response)
-	log.Println("Serving on localhost:8080")
-	http.ListenAndServe(":8080", nil)
+type Config struct {
+	Port string `snest:"PORT"`
 }
 
-func response(w http.ResponseWriter, _ *http.Request) {
-	fmt.Fprintf(w, "Hello, world!")
+//go:embed style.css
+var styleCSS string
+
+func main() {
+	var conf Config
+	if err := snest.Load(&conf); err != nil {
+		log.Fatalf("failed to load config: %s", err)
+	}
+
+	http.HandleFunc("/style.css", styleCSSHandler)
+	addr := ":" + conf.Port
+	log.Printf("Serving on %s\n", addr)
+	http.ListenAndServe(addr, nil)
+}
+
+func styleCSSHandler(w http.ResponseWriter, _ *http.Request) {
+	fmt.Fprintf(w, styleCSS)
 }
