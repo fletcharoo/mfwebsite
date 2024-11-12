@@ -25,11 +25,13 @@ var styleCSS string
 var workingDir string
 
 func main() {
+	// Load service configs.
 	var conf Config
 	if err := snest.Load(&conf); err != nil {
 		log.Fatalf("Failed to load config: %s", err)
 	}
 
+	// Add API routes.
 	http.HandleFunc("/style.css", handlerFactory(styleCSS))
 	workingDir, err := os.Getwd()
 	if err != nil {
@@ -38,17 +40,26 @@ func main() {
 
 	addMarkdownRoutes(workingDir)
 
+	// Start service.
 	addr := ":" + conf.Port
 	log.Println("Serving on", addr)
 	http.ListenAndServe(addr, nil)
 }
 
+// handlerFactory returns a function that implements the input for
+// http.HandleFunc which writes the provided string to the response writer.
 func handlerFactory(data string) func(http.ResponseWriter, *http.Request) {
 	return func(w http.ResponseWriter, _ *http.Request) {
 		fmt.Fprintf(w, data)
 	}
 }
 
+// addMarkdownRoutes finds all markdown files within the current working
+// directory and all sub directories, renders the markdown as HTML, and adds
+// routes to return the generated HTML.
+// The ".md" extension is stripped when creating the route.
+// Any file in the working directory called "index.md" is inferred to be the
+// root route.
 func addMarkdownRoutes(dir string) (err error) {
 	entries, err := os.ReadDir(dir)
 	if err != nil {
@@ -95,13 +106,14 @@ func addMarkdownRoutes(dir string) (err error) {
 	return nil
 }
 
-func mdToHTML(md []byte) string {
-	// create markdown parser with extensions
+// mdToHTML accepts markdown and renders it as a HTML page.
+func mdToHTML(md []byte) (renderedHTML string) {
+	// Create markdown parser with extensions.
 	extensions := parser.CommonExtensions | parser.AutoHeadingIDs | parser.NoEmptyLineBeforeBlock
 	p := parser.NewWithExtensions(extensions)
 	doc := p.Parse(md)
 
-	// create HTML renderer with extensions
+	// Create HTML renderer with extensions.
 	htmlFlags := html.CommonFlags | html.HrefTargetBlank
 	opts := html.RendererOptions{Flags: htmlFlags}
 	renderer := html.NewRenderer(opts)
