@@ -6,10 +6,78 @@
   <title></title>
   <meta name="GENERATOR" content="github.com/gomarkdown/markdown markdown processor for Go">
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-<p>This is the home page</p>
+<h1 id="header-1">Header 1</h1>
+
+<h2 id="header-2">Header 2</h2>
+
+<h3 id="header-3">Header 3</h3>
+
+<h4 id="header-4">Header 4</h4>
+
+<h5 id="header-5">Header 5</h5>
+
+<h6 id="header-6">Header 6</h6>
+
+<p>This is a paragraph</p>
+
+<p>This is <em>italics</em></p>
+
+<p>This is <strong>bold</strong></p>
+
+<p>This is a <a href="https://github.com/fletcharoo" target="_blank">link</a></p>
+
+<ul>
+<li>This</li>
+<li>is</li>
+<li>dotpoints</li>
+</ul>
+
+<ol>
+<li>This</li>
+<li>is</li>
+<li>a</li>
+<li>numbered</li>
+<li>list</li>
+</ol>
+
+<table>
+<thead>
+<tr>
+<th>col1</th>
+<th>col2</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>This</td>
+<td>is</td>
+</tr>
+
+<tr>
+<td>a</td>
+<td>table</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>This is a code block
+with multiple lines
+
+This line too
+</code></pre>
+
+<blockquote>
+<p>This is a quote block</p>
+
+<p>with multiple lines</p>
+
+<p>&ndash; <cite>and citation</cite></p>
+</blockquote>
 
 </body>
 </html>
@@ -23,6 +91,7 @@
   <title></title>
   <meta name="GENERATOR" content="github.com/gomarkdown/markdown markdown processor for Go">
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -40,12 +109,42 @@ body {
     line-height: 1.4;
     font-size: 18px;
     color: #444;
-    background-color: #EEE;
     padding: 0 10px;
 }
 
 h1,h2,h3,h4,h5,h6 {
     line-height: 1.2;
+}
+
+table,th,td {
+    border: 1px solid #444;
+    border-collapse: collapse;
+    padding: 0 10px;
+}
+
+pre {
+    font-size: 14px;
+    /* border: 1px solid #444; */
+    padding: 10px;
+    background-color: #EEE;
+}
+
+pre code {
+    margin: 0;
+    padding: 0;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    background-color: #CCC;
+}
+
+blockquote p {
+    margin: 0;
+    padding: 10px;
+    background-color: #EEE;
 }
 
 ---
@@ -57,6 +156,7 @@ h1,h2,h3,h4,h5,h6 {
   <title></title>
   <meta name="GENERATOR" content="github.com/gomarkdown/markdown markdown processor for Go">
   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
