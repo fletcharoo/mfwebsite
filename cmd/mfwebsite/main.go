@@ -31,12 +31,15 @@ func main() {
 		log.Fatalf("Failed to load config: %s", err)
 	}
 
-	// Add API routes.
-	http.HandleFunc("/style.css", handlerFactory(styleCSS))
 	workingDir, err := os.Getwd()
 	if err != nil {
 		log.Fatalf("Failed to get working directory: %s", err)
 	}
+
+	// Add API routes.
+	http.HandleFunc("/style.css", func(w http.ResponseWriter, req *http.Request) {
+		http.ServeFile(w, req, "style.css")
+	})
 
 	addMarkdownRoutes(workingDir)
 
@@ -115,7 +118,10 @@ func mdToHTML(md []byte) (renderedHTML string) {
 
 	// Create HTML renderer with extensions.
 	htmlFlags := html.CommonFlags | html.HrefTargetBlank | html.CompletePage
-	opts := html.RendererOptions{Flags: htmlFlags}
+	opts := html.RendererOptions{
+		Flags: htmlFlags,
+		CSS:   "style.css",
+	}
 	renderer := html.NewRenderer(opts)
 	renderedHTML = string(markdown.Render(doc, renderer))
 
