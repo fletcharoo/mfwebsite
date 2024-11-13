@@ -16,3 +16,10 @@ table,th,td {
     border-collapse: collapse;
     padding: 0 10px;
 }
+
+code {
+    font-size: 14px;
+    border: 1px solid #444;
+    padding: 10px;
+    background-color: #EEE;
+}

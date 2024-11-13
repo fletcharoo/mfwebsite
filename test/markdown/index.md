@@ -26,3 +26,7 @@ This is a [link](https://github.com/fletcharoo)
 | ---- | ----- |
 | This | is    |
 | a    | table |
+
+```
+this is a code block
+```
