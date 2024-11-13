@@ -10,5 +10,4 @@ FROM debian:latest
 WORKDIR /app
 COPY --from=build /app/main /app/main
 COPY test/markdown /app
-COPY cmd/mfwebsite/style.css /app
 ENTRYPOINT ["/app/main"]

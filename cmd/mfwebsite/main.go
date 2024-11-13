@@ -37,8 +37,9 @@ func main() {
 	}
 
 	// Add API routes.
-	http.HandleFunc("/style.css", func(w http.ResponseWriter, req *http.Request) {
-		http.ServeFile(w, req, "style.css")
+	http.HandleFunc("/style.css", func(w http.ResponseWriter, _ *http.Request) {
+		w.Header().Add("Content-Type", "text/css")
+		fmt.Fprintf(w, styleCSS)
 	})
 
 	addMarkdownRoutes(workingDir)
