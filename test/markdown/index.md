@@ -28,5 +28,13 @@ This is a [link](https://github.com/fletcharoo)
 | a    | table |
 
 ```
-this is a code block
+This is a code block
+with multiple lines
+
+This line too
 ```
+> This is a quote block
+>
+> with multiple lines
+>
+> -- <cite>and citation</cite>

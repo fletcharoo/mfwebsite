@@ -17,9 +17,27 @@ table,th,td {
     padding: 0 10px;
 }
 
-code {
+pre {
     font-size: 14px;
-    border: 1px solid #444;
+    /* border: 1px solid #444; */
+    padding: 10px;
+    background-color: #EEE;
+}
+
+pre code {
+    margin: 0;
+    padding: 0;
+}
+
+blockquote {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    background-color: #CCC;
+}
+
+blockquote p {
+    margin: 0;
     padding: 10px;
     background-color: #EEE;
 }
