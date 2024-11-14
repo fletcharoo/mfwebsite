@@ -1,6 +1,6 @@
 # Makefile
 
-.PHONY: help up down restart test
+.PHONY: help up down test
 
 default: help
 
