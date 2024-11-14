@@ -122,6 +122,7 @@ func mdToHTML(md []byte) (renderedHTML string) {
 	opts := html.RendererOptions{
 		Flags: htmlFlags,
 		CSS:   "style.css",
+		Head:  []byte(`<meta name="viewport" content="width=device-width, initial-scale=1">`),
 	}
 	renderer := html.NewRenderer(opts)
 	renderedHTML = string(markdown.Render(doc, renderer))
