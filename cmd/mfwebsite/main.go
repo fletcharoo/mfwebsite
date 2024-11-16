@@ -104,7 +104,7 @@ func addMarkdownRoutes(dir string) (err error) {
 		}
 
 		http.HandleFunc(addr, handlerFactory(mdToHTML(contents)))
-		log.Println("Registered", addr)
+		log.Println("Registered endpoint", addr)
 	}
 
 	return nil
